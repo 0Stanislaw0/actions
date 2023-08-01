@@ -37,4 +37,5 @@ jobs:
           
       - name: Run Tests
         run: |
+          cd act
           python manage.py test 
