@@ -28,8 +28,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          ls
-          cd act
+          
+      - name: go to project 
+        run: cd act
           
       - name: Run Tests
         run: |
