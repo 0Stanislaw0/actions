@@ -31,6 +31,9 @@ jobs:
           
       - name: go to project 
         run: cd act
+        
+      - name: gls
+        run: ls
           
       - name: Run Tests
         run: |
