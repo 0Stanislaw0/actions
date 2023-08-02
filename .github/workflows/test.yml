@@ -34,4 +34,6 @@ jobs:
           cd act
           python manage.py test 
       - name: Run Pylint
-        run: --rcfile=.pylintrc 
+        run: |
+          cd act
+          pylint .
