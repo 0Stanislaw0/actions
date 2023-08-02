@@ -33,3 +33,5 @@ jobs:
         run: |
           cd act
           python manage.py test 
+      - name: Run Pylint
+        run: pylint --disable=all --enable=unused-import $(git ls-files '*.py')
