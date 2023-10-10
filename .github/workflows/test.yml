@@ -31,9 +31,9 @@ jobs:
           
       - name: Run Tests
         run: |
-          cd act/act
+          cd act
           python manage.py test 
       - name: Run Pylint
         run: |
-          cd act
+          cd act/act
           pylint .
