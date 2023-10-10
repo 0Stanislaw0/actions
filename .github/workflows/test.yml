@@ -52,6 +52,4 @@ jobs:
         if: ${{ steps.filter.outputs.py_scripts_filter == 'true' }}
         run: |
           echo "Changed python files: ${{ steps.filter.outputs.py_scripts_filter_files }}"
-          python -m flakeheaven lint ${{ steps.filter.outputs.py_scripts_filter_files }}
-          python -m black --check ${{ steps.filter.outputs.py_scripts_filter_files }}
-          python -m isort --check ${{ steps.filter.outputs.py_scripts_filter_files }}
+          python -m pylint ${{ steps.filter.outputs.py_scripts_filter_files }}
