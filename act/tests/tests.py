@@ -1,6 +1,14 @@
 from django.test import TestCase
+'''
+ge
+'''
+
 
 class YourTestClass(TestCase):
+'''
+hellop
+
+'''
     def setUp(self):
         # Setup run before every test method.
         pass
@@ -14,3 +22,4 @@ class YourTestClass(TestCase):
 
     def test_something_that_will_fail(self):
         self.assertTrue(True)
+

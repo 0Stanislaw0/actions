@@ -1,5 +1,8 @@
 from django.apps import AppConfig
+'''
+hello
 
+'''
 
 class TestsConfig(AppConfig):
     '''
