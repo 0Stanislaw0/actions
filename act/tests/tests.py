@@ -1,8 +1,4 @@
 from django.test import TestCase
-'''
-ge
-'''
-
 
 class YourTestClass(TestCase):
     '''
@@ -18,8 +14,11 @@ hellop
         pass
 
     def test_something_that_will_pass(self):
-        self.assertFalse(False)
+        # hee
+        b_a = False
+        self.assertFalse(b_a)
 
     def test_something_that_will_fail(self):
-        self.assertTrue(True)
-
+        # ww
+        a_b = True
+        self.assertTrue(a_b)
