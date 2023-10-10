@@ -33,3 +33,23 @@ jobs:
         run: |
           cd act
           python manage.py test 
+          
+      - name: Run Pylint
+        run: |
+          cd act/act
+          pylint .
+          
+      - name: Check for python file changes
+        uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          list-files: 'shell'
+          filters: |
+            py_scripts_filter:
+              - added|modified: '**/*.py'
+              
+      - name: Run linter
+        if: ${{ steps.filter.outputs.py_scripts_filter == 'true' }}
+        run: |
+          echo "Changed python files: ${{ steps.filter.outputs.py_scripts_filter_files }}"
+          python -m pylint ${{ steps.filter.outputs.py_scripts_filter_files }}
