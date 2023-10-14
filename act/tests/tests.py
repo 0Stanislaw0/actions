@@ -1,4 +1,7 @@
 from django.test import TestCase
+"""
+Provides some arithmetic functions
+"""
 
 class YourTestClass(TestCase):
     '''
