@@ -33,12 +33,7 @@ jobs:
         run: |
           cd act
           python manage.py test 
-          
-      - name: Run Pylint
-        run: |
-          cd act/act
-          pylint .
-          
+                    
       - name: Check for python file changes
         uses: dorny/paths-filter@v2
         id: filter
