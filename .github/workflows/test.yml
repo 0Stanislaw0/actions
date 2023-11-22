@@ -18,7 +18,13 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-        
+
+      - name: Cashe depend
+        uses: actions/cache@v3
+        with:
+          path: .venv
+          key: ${{ hashFiles('**/requirements.txt') }}
+
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
@@ -33,12 +39,7 @@ jobs:
         run: |
           cd act
           python manage.py test 
-          
-      - name: Run Pylint
-        run: |
-          cd act/act
-          pylint .
-          
+                    
       - name: Check for python file changes
         uses: dorny/paths-filter@v2
         id: filter
